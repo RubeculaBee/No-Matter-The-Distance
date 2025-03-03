@@ -3,4 +3,5 @@
 [ext_resource type="TileSet" uid="uid://cib2mkslx8bfb" path="res://resources/tileset_level.tres" id="1_whedy"]
 
 [node name="TileMapLayer" type="TileMapLayer"]
+texture_filter = 1
 tile_set = ExtResource("1_whedy")
