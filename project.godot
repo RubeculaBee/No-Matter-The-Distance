@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="No Matter The Distance"
-run/main_scene="res://scenes/levels/level_test.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [display]
