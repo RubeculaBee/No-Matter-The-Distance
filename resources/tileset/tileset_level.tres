@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cib2mkslx8bfb"]
 
-[ext_resource type="Texture2D" uid="uid://cf0exu5rl5inp" path="res://resources/atlas_level.png" id="1_fkddm"]
+[ext_resource type="Texture2D" uid="uid://cf0exu5rl5inp" path="res://resources/tileset/atlas_level.png" id="1_305f3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tyux8"]
-texture = ExtResource("1_fkddm")
+texture = ExtResource("1_305f3")
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 29
 0:0/0 = 0
