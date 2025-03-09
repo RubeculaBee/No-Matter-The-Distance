@@ -20,10 +20,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		# While not pressing a button, velocity gradually becomes 0
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		_sprite.play("default")
+		if is_on_floor(): _sprite.play("default")
 	
 	if is_on_floor() and Input.is_action_just_pressed("p1_up"):
 		velocity.y -= JUMP_SPEED
-		_sprite.play("default")
+		_sprite.play("jump")
 	
 	move_and_slide()
