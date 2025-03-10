@@ -5,3 +5,8 @@
 [node name="Level Tilemap" type="TileMapLayer"]
 texture_filter = 1
 tile_set = ExtResource("1_whedy")
+
+[node name="bottom edge" type="Line2D" parent="."]
+points = PackedVector2Array(0, 385, 1280, 385)
+width = 2.0
+default_color = Color(1, 0, 0, 1)
