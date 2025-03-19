@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="No Matter The Distance"
+run/main_scene="uid://bymu8cklfi743"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [display]
 
 window/size/viewport_width=1280
-window/size/viewport_height=772
+window/size/viewport_height=770
 
 [editor]
 
