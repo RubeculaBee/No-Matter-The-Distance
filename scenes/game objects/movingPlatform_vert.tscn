@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6ab5lks4xldv"]
+[gd_scene load_steps=4 format=3 uid="uid://b6ab5lks4xldv"]
 
+[ext_resource type="Script" uid="uid://3xw4648yypg" path="res://scripts/movingPlatform.gd" id="1_1s6wp"]
 [ext_resource type="Texture2D" uid="uid://chihmdnxfcoeh" path="res://resources/sprites/game objects/moving platform.png" id="1_guk2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qf2jx"]
@@ -7,6 +8,7 @@ size = Vector2(28, 92)
 
 [node name="AnimatableBody2D" type="AnimatableBody2D"]
 texture_filter = 1
+script = ExtResource("1_1s6wp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708

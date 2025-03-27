@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://deuj4bxxdq42d"]
+[gd_scene load_steps=4 format=3 uid="uid://deuj4bxxdq42d"]
 
 [ext_resource type="Texture2D" uid="uid://chihmdnxfcoeh" path="res://resources/sprites/game objects/moving platform.png" id="1_7dhmc"]
+[ext_resource type="Script" uid="uid://3xw4648yypg" path="res://scripts/movingPlatform.gd" id="2_qf2jx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qf2jx"]
 size = Vector2(92, 28)
@@ -13,3 +14,4 @@ texture = ExtResource("1_7dhmc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qf2jx")
+script = ExtResource("2_qf2jx")
