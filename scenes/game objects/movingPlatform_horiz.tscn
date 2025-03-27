@@ -6,12 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qf2jx"]
 size = Vector2(92, 28)
 
-[node name="AnimatableBody2D" type="AnimatableBody2D"]
+[node name="Horizontal Moving Platform" type="AnimatableBody2D"]
 texture_filter = 1
+script = ExtResource("2_qf2jx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_7dhmc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qf2jx")
-script = ExtResource("2_qf2jx")
