@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	# Move from velocity
 	move_and_slide()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# If down is pressed when on floor
 	if is_on_floor() and Input.is_action_just_pressed("p%s_down" % ID):
 		# Get the two tiles the player is standing on

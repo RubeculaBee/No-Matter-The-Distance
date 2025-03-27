@@ -14,9 +14,15 @@ position = Vector2(112, 192)
 
 [node name="Horizontal Moving Platform" parent="." instance=ExtResource("3_5tv1n")]
 position = Vector2(208, 240)
+end_position = Vector2(9, 0)
+SPEED = 3
 
 [node name="Horizontal Moving Platform2" parent="." instance=ExtResource("3_5tv1n")]
 position = Vector2(592, 240)
+end_position = Vector2(0, -5)
+SPEED = 2
 
 [node name="Horizontal Moving Platform3" parent="." instance=ExtResource("3_5tv1n")]
 position = Vector2(880, 240)
+end_position = Vector2(6, -1)
+SPEED = 2
