@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6ab5lks4xldv"]
+
+[ext_resource type="Texture2D" uid="uid://chihmdnxfcoeh" path="res://resources/sprites/game objects/moving platform.png" id="1_guk2x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf2jx"]
+size = Vector2(28, 92)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D"]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(-1, 1)
+texture = ExtResource("1_guk2x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qf2jx")
