@@ -14,29 +14,29 @@ position = Vector2(144, 192)
 
 [node name="Vertical Moving Platform" parent="." instance=ExtResource("3_mcj6b")]
 position = Vector2(240, 176)
-end_position = Vector2(0, -3)
-SPEED = 6
+move_distance = Vector2(0, -3)
+SPEED = 6.0
 
 [node name="Vertical Moving Platform2" parent="." instance=ExtResource("3_mcj6b")]
 position = Vector2(400, 176)
-end_position = Vector2(0, -3)
-SPEED = 5
+move_distance = Vector2(0, -3)
+SPEED = 5.0
 
 [node name="Vertical Moving Platform3" parent="." instance=ExtResource("3_mcj6b")]
 position = Vector2(560, 176)
-end_position = Vector2(0, -3)
-SPEED = 4
+move_distance = Vector2(0, -3)
+SPEED = 4.0
 
 [node name="Vertical Moving Platform4" parent="." instance=ExtResource("3_mcj6b")]
 position = Vector2(720, 176)
-end_position = Vector2(0, -3)
-SPEED = 3
+move_distance = Vector2(0, -3)
+SPEED = 3.0
 
 [node name="Vertical Moving Platform5" parent="." instance=ExtResource("3_mcj6b")]
 position = Vector2(880, 176)
-end_position = Vector2(0, -3)
-SPEED = 2
+move_distance = Vector2(0, -3)
+SPEED = 2.0
 
 [node name="Vertical Moving Platform6" parent="." instance=ExtResource("3_mcj6b")]
 position = Vector2(1040, 176)
-end_position = Vector2(0, -3)
+move_distance = Vector2(0, -3)
