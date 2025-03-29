@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dty6yrydx4rsb"]
+[gd_scene load_steps=3 format=3 uid="uid://dty6yrydx4rsb"]
 
 [ext_resource type="TileSet" uid="uid://cib2mkslx8bfb" path="res://resources/tileset/tileset_level.tres" id="1_whedy"]
+[ext_resource type="Script" uid="uid://cjrdjaod2dyej" path="res://scripts/tilemap_level.gd" id="2_cnn44"]
 
 [node name="Level Tilemap" type="TileMapLayer"]
 texture_filter = 1
 tile_set = ExtResource("1_whedy")
+script = ExtResource("2_cnn44")
 
 [node name="bottom edge" type="Line2D" parent="."]
 points = PackedVector2Array(0, 385, 1280, 385)
