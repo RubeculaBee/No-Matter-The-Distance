@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://c1q683nmwgvt6" path="res://resources/sprite frames/button.tres" id="1_a0q6q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28qnd"]
-size = Vector2(24, 2)
+size = Vector2(18, 2)
 
 [node name="Button" type="StaticBody2D"]
 texture_filter = 1
@@ -14,7 +14,7 @@ script = ExtResource("1_28qnd")
 sprite_frames = ExtResource("1_a0q6q")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-16, 16, -8, 10, 8, 10, 16, 16)
+polygon = PackedVector2Array(-16, 16, -9, 10, 9, 10, 16, 16)
 
 [node name="Trigger" type="Area2D" parent="."]
 collision_mask = 2
