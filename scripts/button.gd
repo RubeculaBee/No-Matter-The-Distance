@@ -1,17 +1,24 @@
 extends StaticBody2D
 
-@onready var trigger = $Trigger
-@onready var sprite = $AnimatedSprite2D
+@onready var trigger = $Trigger         # area trigger to detect when something pushes button
+@onready var sprite = $AnimatedSprite2D # the buttons sprite
+
+signal pressed  # signal emitted when the button is pressed
+signal released # signal emitted when the button is released
 
 func _ready() -> void:
-	trigger.body_entered.connect(_on_button_pressed)
-	trigger.body_exited.connect(_on_button_released)
-	print("Button Ready")
+	# Connect to trigger signals
+	trigger.body_entered.connect(_on_trigger_body_entered)
+	trigger.body_exited.connect(_on_trigger_body_exited)
 
-func _on_button_pressed(body):
+func _on_trigger_body_entered(body):
+	# switch to down sprite
 	sprite.play("down")
-	print("Pressed")
+	# emit pressed signal
+	pressed.emit()
 
-func _on_button_released(body):
+func _on_trigger_body_exited(body):
+	# switch to up sprite
 	sprite.play("default")
-	print("Released")
+	# emit released signal
+	released.emit()
