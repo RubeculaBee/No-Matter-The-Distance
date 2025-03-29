@@ -4,7 +4,7 @@ const SPEED = 128       # One block is 32 pixels, so a speed of 128 is 4 blocks 
 const JUMP_SPEED = 400; # how fast the player jumps
 var direction           # which left/right direction the player is pressing
 
-@onready var _sprite = $AnimatedSprite2D  # Get the attached animated sprite
+@onready var sprite = $AnimatedSprite2D  # Get the attached animated sprite
 @onready var ID = name.get_slice("_", 1)   # ID equals 1 for player_1 and 2 for player_2
 
 func _physics_process(delta: float) -> void:
@@ -14,17 +14,17 @@ func _physics_process(delta: float) -> void:
 	# If pressing a direction
 	if direction:
 		velocity.x = direction * SPEED
-		_sprite.scale.x = direction # look in the direction of movement
-		if is_on_floor(): _sprite.play("walk")
+		sprite.scale.x = direction # look in the direction of movement
+		if is_on_floor(): sprite.play("walk")
 	else:
 		# While not pressing a button, velocity gradually becomes 0
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if is_on_floor(): _sprite.play("default")
+		if is_on_floor(): sprite.play("default")
 	
 	# jump on up button pressed
 	if is_on_floor() and Input.is_action_just_pressed("p%s_up" % ID):
 		velocity.y -= JUMP_SPEED
-		_sprite.play("jump")
+		sprite.play("jump")
 	
 	# fall from gravity
 	if not is_on_floor():
