@@ -38,7 +38,10 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	time += delta
+	# platform moves in the direction of the end point at the given speed
 	position += move_direction * SPEED * delta
+	#if the amount of time elapsed reaches the time it takes for the platform to move to the end
 	if time >= sqrt(pow(move_distance.x,2) + pow(move_distance.y,2))/SPEED:
+		#revers the direction and reset the timer
 		move_direction *= -1
 		time = 0
