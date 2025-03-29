@@ -9,7 +9,7 @@ extends AnimatableBody2D
 var end_node = Node2D.new()
 
 # debug square is a black square
-var debug_square = preload("res://scenes/debug_square.tscn").instantiate()
+##var debug_square = preload("res://scenes/debug_square.tscn").instantiate()
 
 # seconds since the platform was created
 var time = 0
@@ -33,8 +33,8 @@ func _ready() -> void:
 	end_node.position = position + move_distance
 	
 	# debug square shows where the end position is
-	end_node.add_child(debug_square)
-	print("My Pos: ", position, " | End Pos: ", end_node.position)
+	##end_node.add_child(debug_square)
+	##print("My Pos: ", position, " | End Pos: ", end_node.position)
 
 func _physics_process(delta: float) -> void:
 	time += delta
