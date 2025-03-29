@@ -1,28 +1,18 @@
 extends AnimatableBody2D
 
-# end postion is a tile coordinate and is reletaive to the platforms initial position
-@export var move_distance = Vector2()
-# speed is in tiles per second
-@export var SPEED = 1.
+@export var move_distance = Vector2()                    # how many tiles the platform should move
+@export var SPEED = 1.                                   # speed is in tiles per second
+@onready var start_position = position                   # where the platform starts
+@onready var move_direction = move_distance.normalized() # direction the platform will move
+var time = 0                                             # seconds since the platform was created
 
 # debug square is a black square
-var debug_square = preload("res://scenes/debug_square.tscn").instantiate()
-
-# seconds since the platform was created
-var time = 0
-
-# direction of the end point
-var move_direction
-
-# where the platform starts
-@onready var start_position = position
+##var debug_square = preload("res://scenes/debug_square.tscn").instantiate() 
 
 func _ready() -> void:
 	# 1 tile is 32 pixels
 	move_distance *= 32
 	SPEED *= 32
-	
-	move_direction = move_distance.normalized()
 	
 	# debug square shows where the end position is
 	##add_child(debug_square)
