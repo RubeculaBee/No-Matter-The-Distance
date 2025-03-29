@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://c1q683nmwgvt6"]
+
+[ext_resource type="Texture2D" uid="uid://dgk70kbog306l" path="res://resources/sprites/game objects/button_up.png" id="1_ddb14"]
+[ext_resource type="Texture2D" uid="uid://kskqrpf70wjf" path="res://resources/sprites/game objects/button_down.png" id="2_ols0f"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ddb14")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ols0f")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}]

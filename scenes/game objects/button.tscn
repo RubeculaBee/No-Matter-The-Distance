@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://db1yy4e0uuu3i"]
+
+[ext_resource type="Script" uid="uid://cmv32qiqc4tko" path="res://scripts/button.gd" id="1_28qnd"]
+[ext_resource type="SpriteFrames" uid="uid://c1q683nmwgvt6" path="res://resources/sprite frames/button.tres" id="1_a0q6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28qnd"]
+size = Vector2(24, 2)
+
+[node name="Button" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_28qnd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_a0q6q")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-16, 16, -8, 10, 8, 10, 16, 16)
+
+[node name="Trigger" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_28qnd")
+debug_color = Color(0.657152, 0.516166, 0, 0.42)

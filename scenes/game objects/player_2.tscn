@@ -8,6 +8,7 @@ size = Vector2(24, 62)
 
 [node name="player_2" type="CharacterBody2D"]
 texture_filter = 1
+collision_layer = 2
 script = ExtResource("1_r33hl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
