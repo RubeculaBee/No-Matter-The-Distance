@@ -5,11 +5,8 @@ extends AnimatableBody2D
 # speed is in tiles per second
 @export var SPEED = 1.
 
-#node that marks where the moving platform stops
-var end_node = Node2D.new()
-
 # debug square is a black square
-##var debug_square = preload("res://scenes/debug_square.tscn").instantiate()
+var debug_square = preload("res://scenes/debug_square.tscn").instantiate()
 
 # seconds since the platform was created
 var time = 0
@@ -27,13 +24,10 @@ func _ready() -> void:
 	
 	move_direction = move_distance.normalized()
 	
-	# End Node is top level so that the end node doesnt move when the parent moves
-	add_child.call_deferred(end_node)
-	end_node.top_level = true
-	end_node.position = position + move_distance
-	
 	# debug square shows where the end position is
-	##end_node.add_child(debug_square)
+	##add_child(debug_square)
+	##debug_square.top_level = true
+	##debug_square.position = position + move_distance
 	##print("My Pos: ", position, " | End Pos: ", end_node.position)
 
 func _physics_process(delta: float) -> void:
