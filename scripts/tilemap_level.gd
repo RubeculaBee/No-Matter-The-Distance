@@ -1,14 +1,17 @@
 extends TileMapLayer
 
+# the coordinates of the tiles each player is stepping on
 var tile_coords   = [[Vector2(-1,-1), Vector2(-1,-1)],[Vector2(-1,-1), Vector2(-1,-1)]]
+# the atlas coordinates of the tiles each player is stepping on
 var atlas_coords  = [[Vector2(-1,-1), Vector2(-1,-1)],[Vector2(-1,-1), Vector2(-1,-1)]]
 @onready var player_1 = get_parent().get_node("Zone P1/player_1")
 @onready var player_2 = get_parent().get_node("Zone P2/player_2")
 
 func _process(_delta: float) -> void:
+	# if either player presses down when on the ground, attempt to fall through
 	if player_1.is_on_floor() and Input.is_action_just_pressed("p1_down"):
 		fall_through(player_1)
-		
+	
 	if player_2.is_on_floor() and Input.is_action_just_pressed("p2_down"):
 		fall_through(player_2)
 
@@ -23,8 +26,8 @@ func fall_through(player: CharacterBody2D):
 	atlas_coords[player.ID - 1][0] = get_cell_atlas_coords(tile_coords[player.ID - 1][0])
 	atlas_coords[player.ID - 1][1] = get_cell_atlas_coords(tile_coords[player.ID - 1][1])
 	
-	# All platforms are in the 4th row (3rd y-index) of the tile set
-	# if the two tiles are platforms (at the 3rd y-index), 
+	# All one-way platforms are in the 4th row (3rd y-index) of the tile set
+	# if the two tiles are one-way platforms (at the 3rd y-index), 
 	# set the tile to it's first alt tile (which has no collision)
 	if atlas_coords[player.ID - 1][0].y == 3:
 		set_cell(tile_coords[player.ID - 1][0], 0, atlas_coords[player.ID - 1][0], 1)
@@ -32,18 +35,17 @@ func fall_through(player: CharacterBody2D):
 		set_cell(tile_coords[player.ID - 1][1], 0, atlas_coords[player.ID - 1][1], 1)
 	
 	# Start a timer for 0.05 seconds
+	# timers are instanced per player so their one-ways work independantly of each other
 	var oneway_timer = get_tree().create_timer(.05, true, true)
 	match player.ID:
 		1: oneway_timer.timeout.connect(_on_p1_oneway_timer_timeout)
 		2: oneway_timer.timeout.connect(_on_p2_oneway_timer_timeout)
 
 # when the oneway platform timer runs out (after 0.05 seconds)
+# set the two tiles back to their default version (which has collision)
 func _on_p1_oneway_timer_timeout():
-	# set the two tiles back to their default version (which has collision)
 	set_cell(tile_coords[0][0], 0, atlas_coords[0][0])
 	set_cell(tile_coords[0][1], 0, atlas_coords[0][1])
-
 func _on_p2_oneway_timer_timeout():
-	# set the two tiles back to their default version (which has collision)
 	set_cell(tile_coords[1][0], 0, atlas_coords[1][0])
 	set_cell(tile_coords[1][1], 0, atlas_coords[1][1])
