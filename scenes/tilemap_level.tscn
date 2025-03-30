@@ -8,7 +8,38 @@ texture_filter = 1
 tile_set = ExtResource("1_whedy")
 script = ExtResource("2_cnn44")
 
-[node name="bottom edge" type="Line2D" parent="."]
-points = PackedVector2Array(0, 385, 1280, 385)
-width = 2.0
+[node name="Zoning" type="Node2D" parent="."]
+scale = Vector2(5, 1)
+
+[node name="P1 Zone" type="Node2D" parent="Zoning"]
+
+[node name="top edge" type="Line2D" parent="Zoning/P1 Zone"]
+position = Vector2(1, 0)
+points = PackedVector2Array(1279, -4, -1, -4)
+width = 8.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="bottom" type="Line2D" parent="Zoning/P1 Zone"]
+points = PackedVector2Array(0, 388, 1280, 388)
+width = 8.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="Empty Zone" type="ColorRect" parent="Zoning"]
+offset_top = 392.0
+offset_right = 1280.0
+offset_bottom = 760.0
+color = Color(1, 0, 0, 0.345098)
+
+[node name="P2 Zone" type="Node2D" parent="Zoning"]
+position = Vector2(0, 768)
+
+[node name="top edge" type="Line2D" parent="Zoning/P2 Zone"]
+position = Vector2(1, 0)
+points = PackedVector2Array(1279, -4, -1, -4)
+width = 8.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="bottom" type="Line2D" parent="Zoning/P2 Zone"]
+points = PackedVector2Array(0, 388, 1280, 388)
+width = 8.0
 default_color = Color(1, 0, 0, 1)
