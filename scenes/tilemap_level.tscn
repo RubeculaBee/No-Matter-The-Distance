@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://cib2mkslx8bfb" path="res://resources/tileset/tileset_level.tres" id="1_whedy"]
 [ext_resource type="Script" uid="uid://cjrdjaod2dyej" path="res://scripts/tilemap_level.gd" id="2_cnn44"]
 
-[node name="Level Tilemap" type="TileMapLayer"]
+[node name="Tilemap" type="TileMapLayer"]
 texture_filter = 1
 tile_set = ExtResource("1_whedy")
 script = ExtResource("2_cnn44")
