@@ -2,11 +2,6 @@ extends TileMapLayer
 
 var tile_coords   = [[Vector2(-1,-1), Vector2(-1,-1)],[Vector2(-1,-1), Vector2(-1,-1)]]
 var atlas_coords  = [[Vector2(-1,-1), Vector2(-1,-1)],[Vector2(-1,-1), Vector2(-1,-1)]]
-##var player_left_tile_coords        = Vector2(-1,-1) # tilemap coordinates of the first tile the player is standing on
-##var player_right_tile_coords       = Vector2(-1,-1) # tilemap coordinates of the second tile the player is standing on
-##var player_left_tile_atlas_coords  = Vector2(-1,-1) # atlas coordinates of the first tile the player is standing on
-##var player_right_tile_atlas_coords = Vector2(-1,-1) # atlas coordinates of the second tile the player is standing on
-
 @onready var player_1 = get_parent().get_node("Zone P1/player_1")
 @onready var player_2 = get_parent().get_node("Zone P2/player_2")
 
@@ -41,7 +36,6 @@ func fall_through(player: CharacterBody2D):
 	match player.ID:
 		1: oneway_timer.timeout.connect(_on_p1_oneway_timer_timeout)
 		2: oneway_timer.timeout.connect(_on_p2_oneway_timer_timeout)
-
 
 # when the oneway platform timer runs out (after 0.05 seconds)
 func _on_p1_oneway_timer_timeout():
