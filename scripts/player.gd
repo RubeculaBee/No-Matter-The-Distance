@@ -5,7 +5,7 @@ const JUMP_SPEED = 400; # how fast the player jumps
 var direction           # which left/right direction the player is pressing
 
 @onready var sprite = $AnimatedSprite2D  # Get the attached animated sprite
-@onready var ID = name.get_slice("_", 1)   # ID equals 1 for player_1 and 2 for player_2
+@onready var ID = name.get_slice("_", 1).to_int()   # ID equals 1 for player_1 and 2 for player_2
 
 func _physics_process(delta: float) -> void:
 	# direction = -1 or 1 if left or right respectively is pressed
