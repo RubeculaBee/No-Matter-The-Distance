@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d7l8imikmadk"]
+
+[ext_resource type="Texture2D" uid="uid://ky16gbe1bpaq" path="res://resources/sprites/game objects/cloud.png" id="1_gkvup"]
+
+[node name="Cloud" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_gkvup")
