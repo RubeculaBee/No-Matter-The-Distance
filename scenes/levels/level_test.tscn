@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://c1nvvp3imwkys"]
+[gd_scene load_steps=8 format=4 uid="uid://c1nvvp3imwkys"]
 
 [ext_resource type="PackedScene" uid="uid://dty6yrydx4rsb" path="res://scenes/tilemap_level.tscn" id="1_h0hot"]
 [ext_resource type="PackedScene" uid="uid://cc5phtpvhiw43" path="res://scenes/game objects/player_1.tscn" id="2_ycf23"]
 [ext_resource type="PackedScene" uid="uid://db1yy4e0uuu3i" path="res://scenes/game objects/button.tscn" id="3_4lw2e"]
 [ext_resource type="PackedScene" uid="uid://deuj4bxxdq42d" path="res://scenes/game objects/movingPlatform_horiz.tscn" id="3_uh3ll"]
 [ext_resource type="PackedScene" uid="uid://b6ab5lks4xldv" path="res://scenes/game objects/movingPlatform_vert.tscn" id="4_4lw2e"]
+[ext_resource type="PackedScene" uid="uid://bptxdi6rs00eg" path="res://scenes/background.tscn" id="4_bqmi1"]
 [ext_resource type="PackedScene" uid="uid://dsbcpr0nl8mwg" path="res://scenes/game objects/player_2.tscn" id="5_bqmi1"]
 
 [node name="Level Test" type="Node2D"]
@@ -32,6 +33,8 @@ active = false
 [node name="Button" parent="Zone P1/Vertical Moving Platform2" instance=ExtResource("3_4lw2e")]
 position = Vector2(624, 880)
 
+[node name="Background" parent="Zone P1" instance=ExtResource("4_bqmi1")]
+
 [node name="Zone P2" type="Node" parent="."]
 
 [node name="player_2" parent="Zone P2" instance=ExtResource("5_bqmi1")]
@@ -45,6 +48,10 @@ active = false
 
 [node name="Button" parent="Zone P2/Horizontal Moving Platform" instance=ExtResource("3_4lw2e")]
 position = Vector2(496, 272)
+
+[node name="Background" parent="Zone P2" instance=ExtResource("4_bqmi1")]
+offset_top = 768.0
+offset_bottom = 1153.0
 
 [node name="Tilemap" parent="." instance=ExtResource("1_h0hot")]
 tile_map_data = PackedByteArray("AAARAAkAAAAAAAAABgARAAoAAAAAAAEAAAARAAsAAAACAAAAAwASAAsAAAACAAAABAASAAoAAAABAAEAAAASAAkAAAAAAAAABwATAAkAAAAAAAAACAATAAoAAAACAAEAAAATAAsAAAACAAAABQARACEAAAAAAAAADAARACIAAAADAAAAAAARACMAAAADAAAAAAARACQAAAACAAAAEQASACEAAAAAAAAACgATACEAAAAAAAAADgATACIAAAADAAAAAAATACMAAAADAAAAAAATACQAAAACAAAAEQAQAAkAAAACAAMAAAAPAAkAAAABAAMAAAAOAAkAAAAAAAMAAAAUAAkAAAAAAAMAAAAVAAkAAAABAAMAAAAWAAkAAAABAAMAAAAQACEAAAACAAMAAAAPACEAAAABAAMAAAAOACEAAAAAAAMAAAAUACEAAAAAAAMAAAAVACEAAAABAAMAAAAWACEAAAACAAMAAAAUABwAAAABAAMAAAAVABwAAAABAAMAAAAWABwAAAABAAMAAAATABwAAAAAAAMAAAAXAAkAAAABAAMAAAAYAAkAAAABAAMAAAAZAAkAAAABAAMAAAAaAAkAAAACAAMAAAAbAAkAAAAAAAAABgAbAAoAAAAAAAEAAAAbAAsAAAACAAAAAwAcAAsAAAACAAAABAAdAAsAAAACAAAABQAdAAoAAAACAAEAAAAdAAkAAAAAAAAACAAcAAkAAAAAAAAABwAcAAoAAAABAAEAAAAXABwAAAABAAMAAAAYABwAAAAAAAAABQAZABwAAAABAAMAAAAaABwAAAABAAMAAAAbABwAAAABAAMAAAAcABwAAAABAAMAAAAdABwAAAABAAMAAAAeABwAAAACAAMAAAAdACEAAAAAAAAADgAcACEAAAAAAAAACgAYAB0AAAADAAAAAAAYAB4AAAADAAAAAAAYAB8AAAADAAAAAAAYACAAAAADAAAAAAAYACEAAAADAAAAAAAYACIAAAADAAAAAAAYACMAAAADAAAAAAAYACQAAAACAAAAEQAbACEAAAAAAAAADAAbACIAAAADAAAAAAAbACMAAAADAAAAAAAbACQAAAACAAAAEQAdACQAAAACAAAAEQAdACMAAAADAAAAAAAdACIAAAADAAAAAAA=")

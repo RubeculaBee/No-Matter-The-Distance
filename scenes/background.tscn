@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://26d0s3svo1xx" path="res://scripts/background.gd" id="1_bkp1e"]
 
 [node name="Background" type="ColorRect"]
+z_index = -2
 offset_right = 1280.0
-offset_bottom = 770.0
+offset_bottom = 385.0
 color = Color(0.670369, 0.885916, 0.978551, 1)
 script = ExtResource("1_bkp1e")
