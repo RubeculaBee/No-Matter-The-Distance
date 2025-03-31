@@ -17,9 +17,9 @@ func _process(_delta: float) -> void:
 
 func fall_through(player: CharacterBody2D):
 	# Get the two tiles the player is standing on
-	# (12 pixels (half player width) left/right and 64 pixels (two blocks) down, devided by 32 (tile width))
-	tile_coords[player.ID - 1][0] = floor((player.position + Vector2(-12, 64))/32)
-	tile_coords[player.ID - 1][1] = floor((player.position + Vector2( 12, 64))/32)
+	# (12 pixels (half player width) left/right and 48 pixels (1&1/2 blocks) down, devided by 32 (tile width))
+	tile_coords[player.ID - 1][0] = floor((player.position + Vector2(-12, 48))/32)
+	tile_coords[player.ID - 1][1] = floor((player.position + Vector2( 12, 48))/32)
 	
 	# Get the atlas coordinates of the two tiles
 	# "atlas coordinates" is the tiles location in the tile set
