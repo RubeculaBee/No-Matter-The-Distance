@@ -12,6 +12,7 @@ func _physics_process(delta: float) -> void:
 	if alive:
 		move(delta)
 
+# Handles everything about player movement (walking, jumping, falling)
 func move(delta: float):
 	# direction = -1 or 1 if left or right respectively is pressed
 	direction = Input.get_axis("p%s_left" % ID,"p%s_right" % ID) 
@@ -37,6 +38,7 @@ func move(delta: float):
 	# Move from velocity
 	move_and_slide()
 
+# Handles player death
 func die():
 	if alive:
 		alive = false
