@@ -1,13 +1,18 @@
 extends CharacterBody2D
 
 const SPEED = 128       # One block is 32 pixels, so a speed of 128 is 4 blocks per second
-const JUMP_SPEED = 400; # how fast the player jumps
+const JUMP_SPEED = 400  # how fast the player jumps
 var direction           # which left/right direction the player is pressing
+var alive = true        # Becomes false when player dies
 
 @onready var sprite = $AnimatedSprite2D             # Get the attached animated sprite
 @onready var ID = name.get_slice("_", 1).to_int()   # ID equals 1 for player_1 and 2 for player_2
 
 func _physics_process(delta: float) -> void:
+	if alive:
+		move(delta)
+
+func move(delta: float):
 	# direction = -1 or 1 if left or right respectively is pressed
 	direction = Input.get_axis("p%s_left" % ID,"p%s_right" % ID) 
 	
@@ -33,4 +38,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func die():
-	print("dead XP")
+	if alive:
+		alive = false
+		
