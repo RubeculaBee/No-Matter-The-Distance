@@ -1,10 +1,13 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://blbv5lhxqvm5f"]
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://blbv5lhxqvm5f"]
 
 [ext_resource type="Texture2D" uid="uid://bm46j0qlrt0hu" path="res://resources/sprites/player_1/player_1_idle_1.png" id="1_1124d"]
 [ext_resource type="Texture2D" uid="uid://dofa3xgw06mi0" path="res://resources/sprites/player_1/player_1_walk_1.png" id="2_4esdv"]
 [ext_resource type="Texture2D" uid="uid://bptwcmw8oveid" path="res://resources/sprites/player_1/player_1_idle_2.png" id="2_if31m"]
 [ext_resource type="Texture2D" uid="uid://cqc47x27c8122" path="res://resources/sprites/player_1/player_1_jump.png" id="2_w1ef7"]
+[ext_resource type="Texture2D" uid="uid://b4w40o6ddam8g" path="res://resources/sprites/player_1/player_1_die_1.png" id="3_u4gnw"]
 [ext_resource type="Texture2D" uid="uid://b5wbrngcni121" path="res://resources/sprites/player_1/player_1_walk_2.png" id="3_w1ef7"]
+[ext_resource type="Texture2D" uid="uid://ww736vag0j7f" path="res://resources/sprites/player_1/player_1_die_2.png" id="4_b5dh3"]
+[ext_resource type="Texture2D" uid="uid://fedfgbfk705s" path="res://resources/sprites/player_1/player_1_heartbreak.png" id="5_ejpxo"]
 
 [resource]
 animations = [{
@@ -18,6 +21,25 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_u4gnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b5dh3")
+}],
+"loop": true,
+"name": &"die",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ejpxo")
+}],
+"loop": true,
+"name": &"heartbreak",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
