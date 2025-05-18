@@ -31,3 +31,6 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	# Move from velocity
 	move_and_slide()
+
+func die():
+	print("dead XP")

@@ -1,9 +1,9 @@
 extends TileMapLayer
 
 # the coordinates of the tiles each player is stepping on
-var tile_coords   = [[Vector2(-1,-1), Vector2(-1,-1)],[Vector2(-1,-1), Vector2(-1,-1)]]
+var tile_coords   = [[Vector2i(-1,-1), Vector2i(-1,-1)],[Vector2i(-1,-1), Vector2i(-1,-1)]]
 # the atlas coordinates of the tiles each player is stepping on
-var atlas_coords  = [[Vector2(-1,-1), Vector2(-1,-1)],[Vector2(-1,-1), Vector2(-1,-1)]]
+var atlas_coords  = [[Vector2i(-1,-1), Vector2i(-1,-1)],[Vector2i(-1,-1), Vector2i(-1,-1)]]
 @onready var player_1 = get_parent().get_node("Zone P1/player_1")
 @onready var player_2 = get_parent().get_node("Zone P2/player_2")
 
@@ -16,6 +16,13 @@ func _process(_delta: float) -> void:
 		fall_through(player_1)
 	if player_2.is_on_floor() and Input.is_action_just_pressed("p2_down"):
 		fall_through(player_2)
+	
+	# if either player is standing on spikes, that player dies
+	# (co-ordinates of spikes on the atlas is (3,1))
+	if player_1.is_on_floor() and (atlas_coords[0][0] == Vector2i(3,1) or atlas_coords[0][1] == Vector2i(3,1)):
+		player_1.die()
+	if player_2.is_on_floor() and (atlas_coords[1][0] == Vector2i(3,1) or atlas_coords[1][1] == Vector2i(3,1)):
+		player_2.die()
 
 func fall_through(player: CharacterBody2D):
 	# All one-way platforms are in the 4th row (3rd y-index) of the tile set
