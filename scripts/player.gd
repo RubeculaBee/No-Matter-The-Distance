@@ -5,8 +5,13 @@ const JUMP_SPEED = 400  # how fast the player jumps
 var direction           # which left/right direction the player is pressing
 var alive = true        # Becomes false when player dies
 
+signal died
+
 @onready var sprite = $AnimatedSprite2D             # Get the attached animated sprite
 @onready var ID = name.get_slice("_", 1).to_int()   # ID equals 1 for player_1 and 2 for player_2
+
+func _ready() -> void:
+	died.connect(_on_this_died)
 
 func _physics_process(delta: float) -> void:
 	if alive:
@@ -39,7 +44,7 @@ func move(delta: float):
 	move_and_slide()
 
 # Handles player death
-func die():
+func _on_this_died():
 	if alive:
 		alive = false
 		
