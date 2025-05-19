@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://c1nvvp3imwkys"]
+[gd_scene load_steps=9 format=4 uid="uid://c1nvvp3imwkys"]
 
+[ext_resource type="Script" uid="uid://b2diy8xl7q3kj" path="res://scripts/level_handler.gd" id="1_bqmi1"]
 [ext_resource type="PackedScene" uid="uid://dty6yrydx4rsb" path="res://scenes/tilemap_level.tscn" id="1_h0hot"]
 [ext_resource type="PackedScene" uid="uid://cc5phtpvhiw43" path="res://scenes/game objects/player_1.tscn" id="2_ycf23"]
 [ext_resource type="PackedScene" uid="uid://db1yy4e0uuu3i" path="res://scenes/game objects/button.tscn" id="3_4lw2e"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dsbcpr0nl8mwg" path="res://scenes/game objects/player_2.tscn" id="5_bqmi1"]
 
 [node name="Level Test" type="Node2D"]
+script = ExtResource("1_bqmi1")
 
 [node name="Zone P1" type="Node" parent="."]
 
