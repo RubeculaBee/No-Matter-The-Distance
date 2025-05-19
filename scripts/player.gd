@@ -18,6 +18,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if alive:
 		move(delta)
+		
+		if position.y >= 448 + (769 * (ID-1)):
+			died.emit()
 
 # Handles everything about player movement (walking, jumping, falling)
 func move(delta: float):
