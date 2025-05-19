@@ -19,10 +19,11 @@ func _process(_delta: float) -> void:
 	
 	# if either player is standing on spikes, that player dies
 	# (co-ordinates of spikes on the atlas is (3,1))
-	if player_1.is_on_floor() and (atlas_coords[0][0] == Vector2i(3,1) or atlas_coords[0][1] == Vector2i(3,1)):
-		player_1.died.emit()
-	if player_2.is_on_floor() and (atlas_coords[1][0] == Vector2i(3,1) or atlas_coords[1][1] == Vector2i(3,1)):
-		player_2.died.emit()
+	if player_1.alive or player_2.alive:
+		if player_1.is_on_floor() and (atlas_coords[0][0] == Vector2i(3,1) or atlas_coords[0][1] == Vector2i(3,1)):
+			player_1.died.emit()
+		if player_2.is_on_floor() and (atlas_coords[1][0] == Vector2i(3,1) or atlas_coords[1][1] == Vector2i(3,1)):
+			player_2.died.emit()
 
 # Disable the collision of the tile below the player if it is a platform
 func fall_through(player: CharacterBody2D):
