@@ -19,11 +19,6 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 window/size/viewport_width=1280
 window/size/viewport_height=770
 
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
-
 [input]
 
 p1_up={
